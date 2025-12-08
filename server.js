@@ -3,7 +3,7 @@ const Product = require("./models/product");
 const Order = require('./models/order');
 const Partner = require("./models/partner"); // import model
 const JoinTeam = require('./models/JoinTeam');
-const Contact = require("./models/contact");  // ADD THIS WITH OTHER MODELS
+const Contact = require("./models/contact-temp");  // ADD THIS WITH OTHER MODELS
 
 
 
