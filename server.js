@@ -9,9 +9,13 @@ const Contact = require("./models/contact");  // ADD THIS WITH OTHER MODELS
 
 
 
-mongoose.connect("mongodb+srv://fizatrading4_db_user:JQOplcITo1qtFy1p@cluster0.rtkzvgs.mongodb.net/?appName=Cluster0")
-.then(() => console.log("✅ MongoDB Connected Successfully"))
-.catch(err => console.log("❌ MongoDB Connection Error:", err));
+require("dotenv").config();
+
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(() => console.log("✅ MongoDB Connected Successfully"))
+  .catch(err => console.log("❌ MongoDB Connection Error:", err));
+
 
 const express = require("express");
 const app = express();
