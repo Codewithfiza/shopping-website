@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head", { 
+        title: "Join Our Team - TUCK & TWIST",
+        pageCSS: "jointeam" 
+    }) %>
+</head>
+
+<body class="join-team-page">
+
+    <!-- NAVBAR -->
+    <%- include("partials/navbar") %>
+
+    <!-- HERO SECTION -->
+    <section class="team-hero fade-up">
+        <div class="hero-icon">
+            <i class="fa-solid fa-user-group"></i>
+        </div>
+
+        <h1>Join Our Team</h1>
+        <p class="team-subtitle">
+            Be part of our mission to transform waste into eco-friendly creations.  
+            Learn sustainable crafting skills and help make a positive impact.
+        </p>
+    </section>
+
+    <!-- FEATURE CARDS -->
+    <section class="team-features fade-up-delay">
+        <div class="team-card">
+            <h3>Learn & Grow</h3>
+            <p>Master crafting techniques from experienced artisans.</p>
+        </div>
+
+        <div class="team-card">
+            <h3>Make an Impact</h3>
+            <p>Contribute to sustainability and reduce waste creatively.</p>
+        </div>
+
+        <div class="team-card">
+            <h3>Creative Freedom</h3>
+            <p>Express your creativity with recycled materials.</p>
+        </div>
+    </section>
+
+    <!-- APPLICATION FORM -->
+    <section class="team-form-section fade-up-delay2">
+        <div class="team-form-container">
+            <h2>Team Application</h2>
+            <p class="form-subtitle">
+                Tell us about yourself and why you wish to join us.
+            </p>
+
+            <form id="join-team-form">
+    <div class="form-row">
+        <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" name="fullName" required>
+        </div>
+
+        <div class="form-group">
+            <label>Phone *</label>
+            <input type="text" name="phone" required>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label>Email *</label>
+            <input type="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Your Skills *</label>
+            <input type="text" name="skills" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Relevant Experience</label>
+        <textarea name="experience"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label>Why Do You Want to Join? *</label>
+        <textarea name="reason" required></textarea>
+    </div>
+
+    <button class="team-submit-btn">Submit Application</button>
+</form>
+
+        </div>
+    </section>
+
+
+
+    <!-- FOOTER -->
+    <%- include("partials/footer") %>
+
+
+    <div id="toast" class="toast hidden">Application submitted! We will contact you later.</div>
+
+<style>
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 9999;
+}
+.toast.show {
+    opacity: 1;
+}
+.toast.hidden {
+    display: none;
+}
+</style>
+<script src="/js/join-team.js"></script>
+
+
+</body>
+</html>

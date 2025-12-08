@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head", { 
+        title: "Contact Us - TUCK & TWIST",
+        pageCSS: "contact" 
+    }) %>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <%- include("partials/navbar") %>
+
+    <!-- CONTACT HEADER -->
+    <section class="contact-header reveal-down ">
+        <h1>Contact Us</h1>
+        <p>We're always happy to help! Reach out and our team will respond as soon as possible.</p>
+    </section>
+
+    <section class="contact-section">
+
+        <!-- LEFT SIDE CARDS -->
+        <div class="contact-info reveal-left">
+
+            <div class="info-card">
+                <i class="fa-solid fa-envelope"></i>
+                <h3>Email</h3>
+                <p>support@tuckandtwist.com</p>
+                <span>We reply within 24 hours</span>
+            </div>
+
+            <div class="info-card">
+                <i class="fa-solid fa-phone"></i>
+                <h3>Phone</h3>
+                <p>+92 300 0000000</p>
+                <span>Mon–Fri | 9am to 6pm</span>
+            </div>
+
+            <div class="info-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Location</h3>
+                <p>Green City, Pakistan</p>
+                <span>Visit our workshop</span>
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE FORM -->
+        <div class="contact-form reveal-right">
+
+            <h2>Send Us a Message</h2>
+
+           
+        <form id="contactForm">
+
+    <div class="form-row">
+        <input type="text" name="name" placeholder="Your Name *" required>
+        <input type="email" name="email" placeholder="Your Email *" required>
+    </div>
+
+    <input type="text" name="subject" placeholder="Subject *" required>
+
+    <textarea name="message" placeholder="Write your message..." required></textarea>
+
+    <button class="submit-btn">Send Message</button>
+</form>
+
+
+
+    </div>
+</section>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <%- include("partials/footer") %>
+
+    <!-- TOAST MESSAGE -->
+
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    const res = await fetch("/contact/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+
+    if (result.ok) {
+        showToast("Message sent successfully!");
+        e.target.reset(); // clear form
+    } else {
+        showToast("Error: " + result.message);
+    }
+});
+
+// simple toast
+function showToast(msg) {
+    let t = document.createElement("div");
+    t.className = "toast";
+    t.innerText = msg;
+    document.body.appendChild(t);
+
+    setTimeout(() => {
+        t.remove();
+    }, 3000);
+}
+</script>
+
+<style>
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    animation: fadein 0.3s ease;
+    z-index: 9999;
+    font-size: 16px;
+}
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+</style>
+
+    <!-- PAGE JS -->
+    <script src="/js/contact.js"></script>
+
+</body>
+</html>

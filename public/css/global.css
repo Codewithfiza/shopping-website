@@ -1,0 +1,263 @@
+/* ============================
+   GLOBAL STYLES
+============================ */
+
+/* THEME COLORS */
+:root {
+    --brown: #8B5A2B;
+    --light-brown: #F5EDE3;
+    --dark: #2C2C2C;
+    --white: #ffffff;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================
+   NAVBAR
+============================ */
+
+.navbar {
+    width: 100%;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { height: 55px; }
+
+.brand {
+    color: var(--brown);
+    font-weight: 700;
+    font-size: 26px;
+}
+
+/* DESKTOP NAV LINKS */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.nav-links a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 4px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--brown);
+    border-bottom: 2px solid var(--brown);
+}
+
+/* NAV ICONS */
+.nav-icons i {
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--brown);
+}
+
+/* CART BADGE */
+.nav-icons {
+    position: relative;
+}
+
+.cart-link {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-count {
+    position: absolute;
+    top: -21px;
+    right: -11px;
+    background: #d73c2d;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* MOBILE */
+.nav-links .close-menu {
+    display: none;
+}
+nav .menu-toggle {
+    display: none;
+}
+
+/* BACKDROP */
+#nav-backdrop {
+    position: fixed;
+    display: none;
+    z-index: 1500;
+    pointer-events: none;
+}
+
+#nav-backdrop.show {
+    display: block;
+    pointer-events: auto;
+}
+.cart{
+    display: none;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+    nav .menu-toggle {
+        display: block;
+        font-size: 26px;
+        color: var(--brown);
+        cursor: pointer;
+    }
+    .cart{
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 280px;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        padding: 80px 30px;
+        gap: 25px;
+        transition: 0.3s;
+        z-index: 2000;
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+
+    .nav-links .close-menu {
+        display: block;
+        font-size: 26px;
+        color: var(--brown);
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .nav-icons {
+        display: none;
+    }
+}
+
+/* ============================
+   GLOBAL BUTTONS
+============================ */
+
+/* .btn-primary {
+    background: var(--brown);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #704521;
+}
+
+.btn-outline {
+    border: 2px solid var(--brown);
+    color: var(--brown);
+    padding: 10px 20px;
+    border-radius: 6px;
+    background: transparent;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: var(--brown);
+    color: white;
+} */
+
+/* ============================
+   FOOTER
+============================ */
+
+.tt-footer {
+    background: #5f3b1f;
+    color: #f6f1ea;
+    padding: 60px 20px 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-logo { width: 80px; }
+
+.footer-column h3 {
+    color: #c8a27a;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #f6f1ea;
+    transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #c8a27a;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    margin-top: 35px;
+    border-top: 1px solid #c8a27a;
+}
+

@@ -1,0 +1,110 @@
+<%- include("partials/head", { 
+    title: "Cart",
+    pageCSS: "cart"
+}) %>
+
+<body>
+
+<%- include("partials/navbar") %>
+
+<!-- EMPTY CART -->
+<section id="cart-empty" class="cart-empty-container hidden">
+    <div class="cart-icon">
+        <svg width="80" height="80" fill="none" stroke="#737373" stroke-width="3">
+            <path d="M6 6h4l2 12h12l2-12h4"/>
+            <circle cx="14" cy="22" r="2"/>
+            <circle cx="22" cy="22" r="2"/>
+        </svg>
+    </div>
+
+    <h1>Your Cart is Empty</h1>
+    <p>Start shopping and add some products!</p>
+
+    <a href="/products" class="browse-btn">Browse Products</a>
+</section>
+
+
+<!-- MAIN CART SECTION -->
+<section id="cart-section" class="cart-section hidden">
+
+    <h1 class="cart-title">Shopping Cart</h1>
+
+    <div class="cart-wrapper">
+
+        <!-- LEFT SIDE CART ITEMS -->
+        <div id="cart-items" class="cart-items-container"></div>
+
+        <!-- RIGHT SIDE SUMMARY -->
+        <div class="summary-box" id="summary-box">
+            <h2>Order Summary</h2>
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="summary-subtotal">Rs 0</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Shipping</span>
+                <span class="free">Free</span>
+            </div>
+
+            <div class="summary-total">
+                <span>Total</span>
+                <span id="summary-total">Rs 0</span>
+            </div>
+
+            <button id="proceed-checkout" class="checkout-btn">Proceed to Checkout</button>
+
+            <button id="clear-cart" class="clear-cart-btn">Clear Cart</button>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CHECKOUT FORM SECTION (hidden initially) -->
+<section id="checkout-section" class="checkout-section hidden">
+
+    <div class="checkout-card">
+        <h2 class="checkout-title">Checkout Details</h2>
+
+        <form id="checkout-form">
+
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" id="cust-name" required placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="text" id="cust-phone" required placeholder="03XXXXXXXXX">
+            </div>
+
+            <div class="form-group">
+                <label>Address</label>
+                <textarea id="cust-address" required placeholder="House / Street / Area"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>City</label>
+                <input type="text" id="cust-city" required placeholder="Your city">
+            </div>
+
+            <button type="submit" class="place-order-btn">Place Order</button>
+            <button id="cancel-order" class="cancel-order-btn" type="button">
+    Cancel Order
+</button>
+
+
+        </form>
+    </div>
+
+</section>
+
+
+<%- include("partials/footer") %>
+
+<script src="/js/cart.js"></script>
+
+</body>
+</html>

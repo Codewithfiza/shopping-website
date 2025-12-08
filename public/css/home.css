@@ -1,0 +1,378 @@
+
+.banner {
+    background: url('/img/hero banner.png') center/cover no-repeat; /* correct path */
+    height: 450px;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    background-color: #EEDCC3;
+    position: relative;
+    overflow: hidden;
+}
+
+/* SMUDGE EFFECT */
+.banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), var(--light-brown));
+}
+
+/* TEXT ANIMATION */
+.slide-in {
+    animation: slideFromLeft 1.3s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+@keyframes slideFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.banner-content {
+    max-width: 520px;
+    z-index: 2;
+}
+
+/* TYPOGRAPHY */
+.banner-content h2 {
+    color: #3c260c;  /* darker brown for visibility */
+    font-size: 40px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.banner-content p {
+    color: #241910;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* BUTTONS */
+.btn-primary {
+    background: var(--brown);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #704521;
+}
+
+.btn-outline {
+    border: 2px solid var(--brown);
+    color: var(--brown);
+    padding: 10px 20px;
+    border-radius: 6px;
+    background: transparent;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: var(--brown);
+    color: white;
+}
+
+
+/* MISSION SECTION */
+.mission-section {
+    background: var(--light-brown);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.mission-text h2 {
+    color: var(--brown);
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.mission-text p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #4a3c32;
+    font-size: 18px;
+}
+
+/* FEATURES */
+.mission-features {
+    background: var(--light-brown);
+    padding: 40px 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: 0.3s ease-in-out;
+}
+
+/* CARD HOVER LIFT EFFECT */
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.icon-circle {
+    width: 65px;
+    height: 65px;
+    background: #F1DCC7;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-circle i {
+    font-size: 28px;
+    color: var(--brown);
+}
+
+.feature-card h3 {
+    color: var(--brown);
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    color: #4a3c32;
+}
+
+
+
+
+/* Featured Products */
+.featured-products {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #4b2e19; /* brown */
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+/* PRODUCT GRID FIXED & EQUAL SIZES */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    padding: 0 40px;
+}
+
+/* SAME SIZE PRODUCT CARD */
+.product-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+    height: 520px; /* FIXED HEIGHT FOR ALL CARDS */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* FIXED IMAGE BOX */
+.product-img {
+    width: 100%;
+    height: 220px; /* FIXED IMAGE HEIGHT */
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+}
+
+/* IMAGE ALWAYS FITS INSIDE WITHOUT STRETCH */
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* makes all images same appearance */
+    border-radius: 12px;
+}
+
+/* PRICE TAG */
+.price-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #4b2e19;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* CATEGORY TAG */
+.category-tag {
+    background: rgba(209,180,140,0.25);
+    color: #4b2e19;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+/* TITLE */
+.product-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #3a2310;
+    height: 48px; /* lock heading height for perfect alignment */
+}
+
+/* DESCRIPTION */
+.product-card p {
+    color: #555;
+    font-size: 14px;
+    height: 60px; /* equal description area */
+    overflow: hidden;
+}
+
+/* ADD TO CART BUTTON */
+.cart-btn {
+    width: 100%;
+    padding: 12px 0;
+    background: #4b2e19;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: auto;
+}
+.cart-btn:hover {
+    background: #2f1b0f;
+}
+
+/* CARD HOVER EFFECT */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 26px rgba(0,0,0,0.12);
+}
+
+
+/* ================================
+   VIEW ALL PRODUCTS BUTTON
+================================ */
+.view-all-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.view-all-btn {
+    background-color: #7b4f2c; /* Brown */
+    color: white;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.view-all-btn:hover {
+    background-color: #5f3b1f; /* Darker brown */
+    color: white;
+}
+
+
+/* ================================
+   SUSTAINABLE JOURNEY SECTION
+================================ */
+.sustainable-section {
+    background: linear-gradient(90deg, #7b4f2c, #5f3b1f); /* brown gradient */
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    margin-top: 40px;
+}
+
+.sustainable-section h2 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.sustainable-section p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+
+/* ================================
+   BUTTONS IN SUSTAINABLE SECTION
+================================ */
+.sustainable-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Partner Button (Dark Brown) */
+.partner-bt {
+    background: #5f3b1f;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid #5f3b1f;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.partner-bt:hover {
+    background: transparent;
+    color: white;
+    border-color: white;
+}
+
+/* Join Our Team Button (white with brown text) */
+.team-bt {
+    background: white;
+    color: #7b4f2c;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.team-bt:hover {
+    background: transparent;
+    color: white;
+}

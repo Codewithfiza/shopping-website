@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("partials/head", { 
+    title: "TUCK & TWIST — Home", 
+    pageCSS: "home" 
+}) %>
+
+<body>
+
+    <%- include("partials/navbar") %>
+
+    <!-- HERO / BANNER -->
+    <section class="banner">
+        <div class="banner-content slide-in">
+            <h2>Eco-Friendly Products Made From Recycled Materials</h2>
+            <p>Handcrafted, sustainable and unique items made from reused paper and cardboard.</p>
+
+            <div class="banner-buttons">
+                <a href="/products" class="btn-primary">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="/partner" class="btn-outline">Partner With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION SECTION -->
+    <section class="mission-section">
+        <div class="mission-text">
+            <h2>Our Mission</h2>
+            <p>
+                We believe in transforming waste into wonder. Every product tells a story of creativity,
+                sustainability, and craftsmanship.
+            </p>
+        </div>
+    </section>
+
+    <!-- MISSION FEATURES -->
+    <section class="mission-features">
+
+        <div class="feature-card">
+            <div class="icon-circle">
+                <i class="fa-solid fa-recycle"></i>
+            </div>
+            <h3>Recycled Materials</h3>
+            <p>100% recycled cardboard and paper.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon-circle">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+            <h3>Eco-Friendly</h3>
+            <p>Zero waste production process.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon-circle">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <h3>Handcrafted</h3>
+            <p>Made with love and care.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon-circle">
+                <i class="fa-solid fa-people-group"></i>
+            </div>
+            <h3>Community</h3>
+            <p>Supporting local artisans.</p>
+        </div>
+
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="featured-products">
+        <h2 class="section-title">Featured Products</h2>
+        <p class="section-subtitle">Discover our handpicked collection of eco-friendly items</p>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="/img/product1.jpg" alt="Recycled Notebook">
+                    <span class="price-tag">$12.99</span>
+                </div>
+                <span class="category-tag">Notebooks</span>
+                <h3>Recycled Cardboard Notebook</h3>
+                <p>Elegant notebook made from 100% recycled cardboard.</p>
+                <button class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="/img/product2.jpg" alt="Gift Box">
+                    <span class="price-tag">$24.99</span>
+                </div>
+                <span class="category-tag">Gift Boxes</span>
+                <h3>Eco-Friendly Gift Box Set</h3>
+                <p>Handcrafted boxes made from recycled materials.</p>
+                <button class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="/img/product3.jpg" alt="Greeting Cards">
+                    <span class="price-tag">$8.99</span>
+                </div>
+                <span class="category-tag">Cards</span>
+                <h3>Recycled Paper Greeting Cards</h3>
+                <p>Beautiful cards with botanical prints.</p>
+                <button class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="view-all-wrapper">
+        <a href="/products" class="view-all-btn">View All Products</a>
+    </div>
+
+    <!-- SUSTAINABLE SECTION -->
+    <section class="sustainable-section">
+        <h2>Join Our Sustainable Journey</h2>
+        <p>Whether you want to partner with us or join our team, we’d love to hear from you.</p>
+
+        <div class="sustainable-buttons">
+            <a href="/partner" class="partner-bt">Become a Partner</a>
+            <a href="/join-team" class="team-bt">Join Our Team</a>
+        </div>
+    </section>
+
+    <%- include("partials/footer") %>
+
+</body>
+</html>
