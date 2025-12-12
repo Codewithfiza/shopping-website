@@ -112,9 +112,15 @@
                 <span class="category-tag">Wall goods</span>
                 <h3> Evergreen spiral platter</h3>
                 <p>A perfect piece made out of care and love for your walls and table decoration.</p>
-                <button class="cart-btn">
-                    <i class="fas fa-shopping-cart"></i> Add to Cart
-                </button>
+                
+
+                 <button class="product-cart-btn" 
+        data-name="<%= product.name %>" 
+        data-price="<%= product.price %>" 
+        data-image="<%= product.image %>">
+    <i class="fa-solid fa-cart-shopping"></i>
+    Add to Cart
+</button>
             </div>
 
         </div>
@@ -136,6 +142,8 @@
     </section>
 
     <%- include("partials/footer") %>
+
+     <script src="/js/btn.js"></script>
 
 </body>
 </html>
